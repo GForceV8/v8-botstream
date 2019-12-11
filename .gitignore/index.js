@@ -201,12 +201,12 @@ bot.on("message", async function(message) {
             break;
 		    
             case "membres":
-            message.reply("Nous sommes actuellement " + (bot.users.size - 2) + " membres sur le **Brotherhood** !");
+            message.reply("Nous sommes actuellement " + (bot.users.size - 2) + " membres sur le **Discord** !");
             message.delete();
             break;
 		    
             case "ping":
-            message.channel.sendMessage("BOT-Brotherhood a actuellement un ping de `" + bot.ping + " ms` ! ");
+            message.channel.sendMessage("[V8]-[BOT] a actuellement un ping de `" + bot.ping + " ms` ! ");
             message.delete();
             break;
 		    
