@@ -7,14 +7,6 @@ bot.on("ready", function() {
     console.log("Le bot a bien ete connecte")
 });
 
-client.on("message", (message) => {
-if(message.content === spam) {
-    message.reply("Attention: le spam dans ce canal est interdit.");
-    console.log(message.author.username + " (" + message.author.id + ") a envoyé 10 messages ou plus en 5 secondes en " + message.channel.name + ".");
-    message.delete(1000);
-    message.channel.bulkDelete(11);
-});
-
 const PREFIX = "!";
 
 const EVERYONE = "@";
