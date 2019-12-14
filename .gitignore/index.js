@@ -62,7 +62,6 @@ bot.on("message", async function(message) {
     
     var user = message.mentions.users.first();
 
-
     switch (args[0].toLowerCase()) {
             case "unmute":
             if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.sendMessage("Vous n'avez pas la permission d'exécuter cette commande.");
@@ -194,10 +193,6 @@ bot.on("message", async function(message) {
                 message.channel.sendEmbed(embed)
 
                 break;
-		    
-            case "allroles":
-            message.delete();
-            break;
 
             case "v8-bot":
             message.channel.sendMessage("Le [V8]-[BOT] est en ligne.");
