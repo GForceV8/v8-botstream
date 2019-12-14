@@ -8,16 +8,11 @@ bot.on("ready", function() {
 });
 
 client.on("message", (message) => {
-//utilisons quelque chose comme une variable de spam pour 10 messages ou plus envoyés dans les 5000 ms
 if(message.content === spam) {
     message.reply("Attention: le spam dans ce canal est interdit.");
     console.log(message.author.username + " (" + message.author.id + ") a envoyé 10 messages ou plus en 5 secondes en " + message.channel.name + ".");
-//cela ne supprimera qu'un seul message du canal, le plus récent.
     message.delete(1000);
-//1000 représente la durée de temporisation. il ne supprimera qu'un seul message, quelle que soit la valeur.
-//nous pouvons supprimer plusieurs messages avec cela, mais notez qu'il doit venir avant le message de réponse.
     message.channel.bulkDelete(11);
-   }
 });
 
 const PREFIX = "!";
