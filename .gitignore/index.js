@@ -194,6 +194,10 @@ bot.on("message", async function(message) {
                 message.channel.sendEmbed(embed)
 
                 break;
+		    
+            case "allroles":
+            message.delete();
+            break;
 
             case "v8-bot":
             message.channel.sendMessage("Le [V8]-[BOT] est en ligne.");
