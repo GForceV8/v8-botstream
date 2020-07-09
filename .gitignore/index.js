@@ -23,6 +23,14 @@ bot.on('guildMemberAdd', member => {
     return welcomechannel.send({embed})
 });
 
+bot.on('guildMemberAdd', member => {
+
+    let serverTag = member.guild.name
+    const role = member.guild.roles.find("name", "New")    
+    member.addRole(role)
+    var embed = new Discord.RichEmbed()
+});
+
 bot.on('guildMemberRemove', member => {
 
     let serverTag = member.guild.name
