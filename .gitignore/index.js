@@ -18,7 +18,7 @@ bot.on('guildMemberAdd', member => {
     const role = member.guild.roles.find("name", "New")    
     member.addRole(role)
     var embed = new Discord.RichEmbed()
-    .setColor("#38ad15")
+    .setColor("#0078bd")
     .setDescription(`:white_check_mark: **Bienvenue** sur le discord ''** ${serverTag} **'' **<@${member.user.id}>**`)
     return welcomechannel.send({embed})
 });
@@ -36,7 +36,7 @@ bot.on('guildMemberRemove', member => {
     let serverTag = member.guild.name
     const welcomechannel = member.guild.channels.find('id', '653838454978904064')
     var embed = new Discord.RichEmbed()
-    .setColor("#0078bd")
+    .setColor("#e30505")
     .setDescription(`:wave: **<@${member.user.id}>** viens de quitté le serveur, bye bye !!!`)
     return welcomechannel.send({embed})
 });
