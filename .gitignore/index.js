@@ -23,24 +23,6 @@ bot.on('guildMemberAdd', member => {
     return welcomechannel.send({embed})
 });
 
-bot.on('guildMemberAdd', member => {
-
-    let serverTag = member.guild.name
-    const role = member.guild.roles.find("name", "New")    
-    member.addRole(role)
-    var embed = new Discord.RichEmbed()
-});
-
-bot.on('guildMemberRemove', member => {
-
-    let serverTag = member.guild.name
-    const welcomechannel = member.guild.channels.find('id', '653838454978904064')
-    var embed = new Discord.RichEmbed()
-    .setColor("#e30505")
-    .setDescription(`:wave: **<@${member.user.id}>** viens de quitté le serveur, bye bye !!!`)
-    return welcomechannel.send({embed})
-});
-
 bot.on("message", async function(message) {
     if (message.author.equals(bot.user)) return;
 
