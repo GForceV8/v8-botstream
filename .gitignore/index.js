@@ -11,16 +11,12 @@ const PREFIX = "*";
 
 const EVERYONE = "@";
 
-bot.on('guildMemberAdd', member => {
+bot.on("guildMemberRemove", function(member) {
+    member.guild.channels.find("name", "bienvenue").sendMessage(member.toString() + " viens de quitté le serveur, bye bye !" + " :x:");
+});
 
-    let serverTag = member.guild.name
-    const welcomechannel = member.guild.channels.find('id', '653838454978904064')
-    const role = member.guild.roles.find("name", "New")    
-    member.addRole(role)
-    var embed = new Discord.RichEmbed()
-    .setColor("#0078bd")
-    .setDescription(`:white_check_mark: **Bienvenue** sur le discord ''** ${serverTag} **'' **<@${member.user.id}>**`)
-    return welcomechannel.send({embed})
+bot.on("guildMemberAdd", function(member) {
+    member.guild.channels.find("name", "bienvenue").sendMessage(member.toString() + " Bienvenue sur le serveur **[V8]Neildy™ / [Z_WorlD]** ! :white_check_mark:");
 });
 
 bot.on("message", async function(message) {
@@ -68,7 +64,7 @@ bot.on("message", async function(message) {
                 .addField(":clock10: Heure :", message.channel.createdAt)
                 .setColor("#0078bd")
                 .setAuthor(message.author.username, message.author.avatarURL)
-                .setFooter("LOG - UNMUTE - [V8]-[BOT] par @GForceV8#5880")
+                .setFooter("LOG - UNMUTE - [V8]-[BOT] par @NeildyV8#5880")
                 .setTimestamp()
             member.guild.channels.find("name", "log").sendEmbed(embed);
             bot.channels.get('653875211250434059').sendMessage(":white_check_mark: Le membre " + user.username + " **a été unmute**.")
@@ -90,7 +86,7 @@ bot.on("message", async function(message) {
                 .addField(":scroll: Raison :", reasontimed)
                 .setColor("#0078bd")
                 .setAuthor(message.author.username, message.author.avatarURL)
-                .setFooter("LOG - MUTE - [V8]-[BOT] par @GForceV8#5880")
+                .setFooter("LOG - MUTE - [V8]-[BOT] par @NeildyV8#5880")
                 .setTimestamp()
             member.guild.channels.find("name", "log").sendEmbed(embed);
             bot.channels.get('653875211250434059').sendMessage(":white_check_mark: Le membre " + user.username + " **a été mute** pour : " + reason);
@@ -112,7 +108,7 @@ bot.on("message", async function(message) {
                 .addField(":clock10: Heure :", message.channel.createdAt)
                 .setColor("#0078bd")
                 .setAuthor(message.author.username, message.author.avatarURL)
-                .setFooter("LOG - KICK - [V8]-[BOT] par @GForceV8#5880")
+                .setFooter("LOG - KICK - [V8]-[BOT] par @NeildyV8#5880")
                 .setTimestamp()
             member.guild.channels.find("name", "log").sendEmbed(embed);
             bot.channels.get('653875211250434059').sendMessage(":white_check_mark: Le membre " + user.username + " a été kick pour : " + reason);
@@ -137,7 +133,7 @@ bot.on("message", async function(message) {
                 .addField(":clock10: Heure :", message.channel.createdAt)
                 .setColor("#0078bd")
                 .setAuthor(message.author.username, message.author.avatarURL)
-                .setFooter("LOG - BAN - [V8]-[BOT] par @GForceV8#5880")
+                .setFooter("LOG - BAN - [V8]-[BOT] par @NeildyV8#5880")
                 .setTimestamp()
             member.guild.channels.find("name", "log").sendEmbed(embed);
             bot.channels.get('653875211250434059').sendMessage(":white_check_mark: Le membre " + user.username + " a été banni pour: " + reason);
@@ -159,7 +155,7 @@ bot.on("message", async function(message) {
                 .addField(":clock10: Heure:", message.channel.createdAt)
                 .addField(":scroll: Salon :", message.channel)
                 .setColor("#0078bd")
-                .setFooter("LOG - PURGE - [V8]-[BOT] par @GForceV8#5880")
+                .setFooter("LOG - PURGE - [V8]-[BOT] par @NeildyV8#5880")
                 .setTimestamp()
             message.delete()
             member.guild.channels.find("name", "log").sendEmbed(embed);
@@ -175,9 +171,9 @@ bot.on("message", async function(message) {
                 .addField(":busts_in_silhouette: !membres","Cette commande vous affiche le nombre de membre actuel **sur le serveur Discord**")
                 .addField(":level_slider: !ping","Cette commande vous affiche le ping actuel **du bot**.")
                 .setColor("#0078bd")
-                .setFooter("Aide - [V8]-[BOT] by @GForceV8")
+                .setFooter("Aide - [V8]-[BOT] by @NeildyV8")
                 .setAuthor(message.author.username, message.author.avatarURL)
-                .setDescription("Voici la liste des commandes du [V8]-[BOT] - By @GForceV8.")
+                .setDescription("Voici la liste des commandes du [V8]-[BOT] - By @NeildyV8.")
                 .setTimestamp()
                 message.delete()
                 message.channel.sendEmbed(embed)
