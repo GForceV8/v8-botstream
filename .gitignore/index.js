@@ -7,7 +7,7 @@ bot.on("ready", function() {
     console.log("Le bot a bien ete connecte")
 });
 
-const PREFIX = "*";
+const PREFIX = "v/*";
 
 const EVERYONE = "@";
 
@@ -163,13 +163,13 @@ bot.on("message", async function(message) {
 
             case "modération":
             var embed = new Discord.RichEmbed()
-                .addField(":rocket: !ban", "Cette commande permet de bannir un utilisateur ! Pour l'utiliser, faites !ban @(utilisateur) + (raison)")
-                .addField(":door: !kick", "Cette commande permet de kick un utilisateur ! Pour l'utiliser, faites !kick @(utilisateur) + (raison)")
-                .addField(":wastebasket: !purge", "Cette commande permet de supprimé des messages beaucoup plus rapidement ! Pour l'utiliser, faites !purge (nombredemessages)")
-                .addField(":mute: !mute", "Cette commande permet de muté un utilisateur. Pour l'utiliser, faites .mute @(utilisateur) + (raison)")
-                .addField(":loud_sound: !unmute", "Cette commande permet d'unmute un utilisateur. Pour l'utiliser, faites .unmute @(utilisateur)")
-                .addField(":busts_in_silhouette: !membres","Cette commande vous affiche le nombre de membre actuel **sur le serveur Discord**")
-                .addField(":level_slider: !ping","Cette commande vous affiche le ping actuel **du bot**.")
+                .addField(":rocket: v/*ban", "Cette commande permet de bannir un utilisateur ! Pour l'utiliser, faites !ban @(utilisateur) + (raison)")
+                .addField(":door: v/*kick", "Cette commande permet de kick un utilisateur ! Pour l'utiliser, faites !kick @(utilisateur) + (raison)")
+                .addField(":wastebasket: v/*purge", "Cette commande permet de supprimé des messages beaucoup plus rapidement ! Pour l'utiliser, faites !purge (nombredemessages)")
+                .addField(":mute: v/*mute", "Cette commande permet de muté un utilisateur. Pour l'utiliser, faites .mute @(utilisateur) + (raison)")
+                .addField(":loud_sound: v/*unmute", "Cette commande permet d'unmute un utilisateur. Pour l'utiliser, faites .unmute @(utilisateur)")
+                .addField(":busts_in_silhouette: v/*membres","Cette commande vous affiche le nombre de membre actuel **sur le serveur Discord**")
+                .addField(":level_slider: v/*ping","Cette commande vous affiche le ping actuel **du bot**.")
                 .setColor("#0078bd")
                 .setFooter("Aide - [V8]-[BOT] by @NeildyV8")
                 .setAuthor(message.author.username, message.author.avatarURL)
